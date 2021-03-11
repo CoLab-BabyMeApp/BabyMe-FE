@@ -4,11 +4,14 @@ body {
   height: 100vh;
 }
 
-#root {
+h3 {
+  text-align: center;
+ }
+
+ #root {
   height: 100%;
 }
 
 .map {
   height: 100%;
 }
-
