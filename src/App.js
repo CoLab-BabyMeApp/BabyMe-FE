@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import markerIconPng from 'leaflet/dist/images/marker-icon.png';
 import { Icon } from 'leaflet';
 import LocationMarker from './LocationMarker';
+import Menu from './Menu';
 import daycaresData from './data/daycaresData';
 import './App.css';
 
@@ -10,7 +11,13 @@ export default function App() {
 
   const daycareElements = daycaresData.map(daycare => (
     <Marker key={daycare.id} position={[daycare.lat, daycare.lng]} icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41] })}>
-      <Popup>Daycare here</Popup>
+      <Popup>
+        {daycare.name}
+        <br />
+        {daycare.streetAddress}
+        <br />
+        {daycare.city}, {daycare.state}
+      </Popup>
     </Marker>
   ));
 
@@ -25,6 +32,7 @@ export default function App() {
         <LocationMarker />
         {daycareElements}
       </MapContainer>
+      <Menu />
     </>
   )
 }
