@@ -5,6 +5,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 export default function Menu() {
 
@@ -19,9 +20,10 @@ export default function Menu() {
       </AccordionSummary>
       <AccordionDetails>
         <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-          sit amet blandit leo lobortis eget.
-          </Typography>
+          <PhoneIcon /> {daycare.phoneNumber}
+          <br />
+
+        </Typography>
       </AccordionDetails>
     </Accordion>
   ));
