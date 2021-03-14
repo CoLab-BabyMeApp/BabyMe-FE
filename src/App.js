@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import markerIconPng from 'leaflet/dist/images/marker-icon.png';
 import { Icon } from 'leaflet';
 import LocationMarker from './LocationMarker';
 import Menu from './Menu';
 import daycaresData from './data/daycaresData';
+//import ReactLeafletSearch from "react-leaflet-search";
 import './App.css';
 
 export default function App() {
