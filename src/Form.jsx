@@ -8,7 +8,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+//import MenuIcon from '@material-ui/icons/Menu';
+import { MdFilterList } from "react-icons/md";
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Radio from '@material-ui/core/Radio';
@@ -90,10 +91,11 @@ export default function PersistentDrawerRight() {
     setValue(e.target.value);
 
     if (e.target.value === 'infant') {
-      setFilteredDaycares(
+      let filteredDaycares = setFilteredDaycares(
         daycaresData.filter((daycare) =>
-          daycare.includes('infant')
+          daycare.infant
         ))
+      return filteredDaycares
     }
   };
 
@@ -125,7 +127,7 @@ export default function PersistentDrawerRight() {
             onClick={handleDrawerOpen}
             className={clsx(open && classes.hide)}
           >
-            <MenuIcon />
+            <MdFilterList />
           </IconButton>
         </Toolbar>
       </AppBar>
