@@ -115,7 +115,7 @@ export default function PersistentDrawerRight() {
         })}
       >
         <Toolbar>
-          <Typography variant="h6" noWrap className={classes.title}>
+          <Typography variant="h5" noWrap className={classes.title}>
             BabyMe
           </Typography>
           <IconButton
@@ -132,7 +132,7 @@ export default function PersistentDrawerRight() {
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
-        })}
+        })} style={{ padding: '0px 0px 0px 0px' }}
       >
         <div className={classes.drawerHeader} />
       </main>
