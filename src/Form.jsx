@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -19,6 +19,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Menu from './Menu';
 import daycaresData from './data/daycaresData';
+import Filter from './Filter';
 
 const drawerWidth = 240;
 
@@ -83,21 +84,6 @@ export default function PersistentDrawerRight() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState('');
-  const [filteredDaycares, setFilteredDaycares] = useState([]);
-
-  const handleRadioChange = (e) => {
-    e.preventDefault();
-    setValue(e.target.value);
-
-    if (e.target.value === 'infant') {
-      let filteredDaycares = setFilteredDaycares(
-        daycaresData.filter((daycare) =>
-          daycare.infant
-        ))
-      return filteredDaycares
-    }
-  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -138,6 +124,7 @@ export default function PersistentDrawerRight() {
       >
         <div className={classes.drawerHeader} />
       </main>
+
       <Drawer
         className={classes.drawer}
         variant="persistent"
@@ -153,24 +140,11 @@ export default function PersistentDrawerRight() {
           </IconButton>
         </div>
         <Divider />
-        <FormControl component="fieldset" style={{ padding: '10px', marginTop: '10px' }}>
-          <FormLabel component="legend" style={{ fontWeight: 'bold' }}>Age</FormLabel>
-          <RadioGroup aria-label="age" name="age" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="infant" control={<Radio />} label="0 - 1" />
-            <FormControlLabel value="toddler" control={<Radio />} label="2 - 3" />
-            <FormControlLabel value="child" control={<Radio />} label="4 - 6" />
-            <FormControlLabel value="olderChild" control={<Radio />} label="7 -12" />
-          </RadioGroup>
 
-          {/* <FormLabel component="legend" style={{ fontWeight: 'bold', marginTop: '10px' }}>Hours of Operation</FormLabel>
-          <RadioGroup aria-label="hours" name="hours" value={value} onChange={handleRadioChange}>
-            <FormControlLabel value="day" control={<Radio />} label="Day" />
-            <FormControlLabel value="evening" control={<Radio />} label="Evening" />
-          </RadioGroup> */}
-        </FormControl>
+        <Filter />
+
         <Divider />
-        <Menu />
       </Drawer>
-    </div>
+    </div >
   );
 }
