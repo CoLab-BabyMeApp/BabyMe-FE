@@ -116,8 +116,8 @@ module.exports = [
     "olderChild": true,
     "snacks": true,
     "covidPlan": true,
-    "lat": "",
-    "lng": ""
+    "lat": "45.468830",
+    "lng": "-122.653150"
   },
   {
     "id": "7",
@@ -136,8 +136,8 @@ module.exports = [
     "olderChild": true,
     "snacks": true,
     "covidPlan": false,
-    "lat": "",
-    "lng": ""
+    "lat": "30.670630",
+    "lng": "-88.196320"
   },
   {
     "id": "8",
@@ -156,8 +156,8 @@ module.exports = [
     "olderChild": false,
     "snacks": true,
     "covidPlan": true,
-    "lat": "",
-    "lng": ""
+    "lat": "30.685370",
+    "lng": "-88.190180"
   },
   {
     "id": "9",
@@ -176,7 +176,7 @@ module.exports = [
     "olderChild": false,
     "snacks": true,
     "covidPlan": true,
-    "lat": "",
-    "lng": ""
+    "lat": "47.608960",
+    "lng": "-122.332080"
   }
 ];
