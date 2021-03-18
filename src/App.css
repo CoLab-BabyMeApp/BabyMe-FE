@@ -1,3 +1,8 @@
+$yellow: #FDF6C7;
+$blue: #5db0f0;
+$green: #A3F4D4;
+$red: #F57682;
+
 html, body {
   margin: 0px;
   padding: 0px;
@@ -19,4 +24,8 @@ h3 {
 
 .map {
   height: 100%;
+}
+
+.landing-button:hover {
+  color: #5db0f0;
 }
