@@ -12,14 +12,11 @@ import IconButton from '@material-ui/core/IconButton';
 import { MdFilterList } from "react-icons/md";
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-import Menu from './Menu';
-import daycaresData from './data/daycaresData';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
 import Filter from './Filter';
+import TransitionsModal from './Modal';
 
 const drawerWidth = 240;
 
@@ -78,11 +75,32 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginRight: 0,
   },
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
 
 export default function PersistentDrawerRight() {
   const classes = useStyles();
   const theme = useTheme();
+  // const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
+
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -106,18 +124,14 @@ export default function PersistentDrawerRight() {
           <Typography variant="h5" noWrap className={classes.title}>
             BabyMe
           </Typography>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={handleDrawerOpen}
-            className={clsx(open && classes.hide)}
-          >
-            <MdFilterList />
-          </IconButton>
+          <TransitionsModal />
+
         </Toolbar>
       </AppBar>
-      <main
+
+      <TransitionsModal />
+
+      {/* <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
         })} style={{ padding: '0px 0px 0px 0px' }}
@@ -144,7 +158,34 @@ export default function PersistentDrawerRight() {
         <Filter />
 
         <Divider />
-      </Drawer>
+      </Drawer> */}
+
+
+      {/* <button type="button" onClick={handleOpen}>
+        react-transition-group
+      </button> */}
+
+      {/* <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className={classes.modal}
+          open={open}
+          onClose={handleClose}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={open}>
+            <div className={classes.paper}>
+              <h2 id="transition-modal-title">Transition modal</h2>
+              <p id="transition-modal-description">react-transition-group animates me.</p>
+            </div>
+          </Fade>
+          <Filter />
+        </Modal> */}
+
     </div >
   );
 }
