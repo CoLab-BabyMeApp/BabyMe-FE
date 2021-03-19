@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import * as daycaresData from './data/geoJson.json'
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import * as daycaresData from './data/geoJson.json';
 import IconMarker from './IconMarker';
 import './App.css';
+import Form from './Form';
 
 export default function Map() {
 
@@ -30,7 +30,8 @@ export default function Map() {
   }, []);
 
   return (
-    <div>
+    <>
+      <Form />
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -41,7 +42,7 @@ export default function Map() {
       >
         {daycaresData.features.map(daycare => (
           <Marker
-            key={daycare.properties.name}
+            key={daycare.properties.id}
             latitude={daycare.geometry.coordinates[1]}
             longitude={daycare.geometry.coordinates[0]}
             onClick={(e) => {
@@ -71,6 +72,6 @@ export default function Map() {
           </Popup>
         ) : null}
       </ReactMapGL>
-    </div>
+    </>
   );
 }
