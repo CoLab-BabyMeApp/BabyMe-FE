@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as daycaresData from './data/geoJson.json';
 import IconMarker from './IconMarker';
-import './App.css';
 import Form from './Form';
+import './App.css';
 
 export default function Map() {
 
