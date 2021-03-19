@@ -47,7 +47,9 @@ export default function Filter() {
     let sortedDaycares = [];
 
     daycaresData.map((daycare) => {
-      if (daycare.infant === true && e.target.value === 'infant') {
+      if (e.target.value === null) {
+        alert('Please make a selection.')
+      } else if (daycare.infant === true && e.target.value === 'infant') {
         sortedDaycares.push(daycare)
       } else if (daycare.toddler === true && e.target.value === 'toddler') {
         sortedDaycares.push(daycare)
@@ -55,9 +57,16 @@ export default function Filter() {
         sortedDaycares.push(daycare)
       }
       console.log(daycare, sortedDaycares, 'filter');
-    })
-  };
+    });
 
+    //   daycaresData.map((daycare) => {
+    //     let component
+    //     switch (daycare{
+    //       case 'daycare.infant':
+    //         component = sortedDaycares.push(daycare)
+    //     })
+    // }));
+  };
   return (
     <>
       <FormControl component="fieldset" style={{ padding: '10px', marginTop: '10px' }}>

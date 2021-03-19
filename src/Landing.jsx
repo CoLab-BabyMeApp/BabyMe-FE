@@ -10,7 +10,6 @@ import daycareArrowBlue from './assets/daycareArrowBlue.png';
 import daycareArrowPink from './assets/daycareArrowPink.png';
 import daycareArrowGreen from './assets/daycareArrowGreen.png';
 import daycareArrowPurple from './assets/daycareArrowPurple.png';
-import './App.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
