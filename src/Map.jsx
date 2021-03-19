@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as daycaresData from './data/geoJson.json'
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -44,16 +44,12 @@ export default function Map() {
             key={daycare.properties.name}
             latitude={daycare.geometry.coordinates[1]}
             longitude={daycare.geometry.coordinates[0]}
+            onClick={(e) => {
+              e.preventDefault();
+              setSelectedDaycare(daycare);
+            }}
           >
-            <button
-              className="marker-btn"
-              onClick={e => {
-                e.preventDefault();
-                setSelectedDaycare(daycare);
-              }}
-            >
-              <IconMarker />
-            </button>
+            <IconMarker />
           </Marker>
         ))}
 
@@ -65,9 +61,12 @@ export default function Map() {
               setSelectedDaycare(null);
             }}
           >
-            <div>
+            <div style={{ textAlign: 'center' }}>
               <h2>{selectedDaycare.properties.name}</h2>
               <p>{selectedDaycare.properties.streetAddress}</p>
+              <span>{selectedDaycare.properties.city}</span>, <span></span>
+              <span>{selectedDaycare.properties.state}</span>
+              <p>{selectedDaycare.properties.zipCode}</p>
             </div>
           </Popup>
         ) : null}
