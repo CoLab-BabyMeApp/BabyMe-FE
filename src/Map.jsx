@@ -4,6 +4,7 @@ import * as daycaresData from './data/geoJson.json';
 import IconMarker from './IconMarker';
 import LocationMarker from './LocationMarker';
 import Form from './Form';
+import Search from './Search';
 import './App.css';
 
 export default function Map() {
@@ -33,7 +34,8 @@ export default function Map() {
   return (
     <>
       <Form />
-      <LocationMarker />
+      {/* <LocationMarker /> */}
+      <Search />
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
