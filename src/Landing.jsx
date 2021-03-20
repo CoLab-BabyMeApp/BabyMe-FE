@@ -9,7 +9,13 @@ import daycareArrowBlue from './assets/daycareArrowBlue.png';
 import daycareArrowPink from './assets/daycareArrowPink.png';
 import daycareArrowGreen from './assets/daycareArrowGreen.png';
 import daycareArrowPurple from './assets/daycareArrowPurple.png';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+import { BiCurrentLocation } from 'react-icons/bi';
+import { HashLink as Link } from "react-router-hash-link";
 import './App.css';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,65 +28,37 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: 'none',
     textAlign: 'center',
     color: theme.palette.text.secondary,
-  }
+  },
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
 
 export default function Landing() {
 
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleLocationClick = () => {
+    window.location("/map");
+  }
 
   return (
-    // <div className={classes.root} style={{ fontFamily: 'Roboto, sans-serif', letterSpacing: '0.1rem' }}>
-    //   <Grid container spacing={3}>
-    //     <Grid item xs={12}>
-    //       <Paper className={classes.paper} style={{ display: 'flex', float: 'left', justifyContent: 'center', alignItems: 'center' }}>
-    //         <img src={daycareLogo} alt="toy blocks" style={{ width: '200px' }} />
-    //         <p style={{ fontWeight: 'bold', fontSize: '2.5rem' }}>
-    //           BabyMe
-    //         </p>
-    //       </Paper>
-    //       <Button className="landing-button" color="default" style={{ float: 'right' }}>
-    //         Let's get started!
-    //       </Button>
-    //     </Grid>
-    //     <Grid item xs={12} sm={6}>
-    //       <Paper className={classes.paper}>
-    //         <img src={kidsAtTable} alt="toy blocks" style={{ width: '100%', margin: 'auto' }} />
-    //       </Paper>
-    //     </Grid>
-    //     {/* <Grid item xs={12} sm={6}>
-    //       <Paper className={classes.paper}>
-    //         <img src={twoGirls} alt="two girls drawing" style={{ width: '100%', margin: 'auto' }} />
-    //       </Paper>
-    //     </Grid> */}
-    //     <Grid item xs={6} sm={3} style={{ textAlign: 'center' }}>
-    //       <img src={daycareArrowBlue} alt="blue arrow" style={{ width: '20%' }} />
-    //       <Paper className={classes.paper}>
-    //         Enter your location
-    //       </Paper>
-    //     </Grid>
-    //     <Grid item xs={6} sm={3} style={{ textAlign: 'center' }}>
-    //       <img src={daycareArrowPink} alt="blue arrow" style={{ width: '20%' }} />
-    //       <Paper className={classes.paper}>
-    //         Visit a list of daycares
-    //       </Paper>
-    //     </Grid>
-    //     <Grid item xs={6} sm={3} style={{ textAlign: 'center' }}>
-    //       <img src={daycareArrowGreen} alt="blue arrow" style={{ width: '20%' }} />
-    //       <Paper className={classes.paper}>
-    //         Customize your search
-    //       </Paper>
-    //     </Grid>
-    //     <Grid item xs={6} sm={3} style={{ textAlign: 'center' }}>
-    //       <img src={daycareArrowPurple} alt="blue arrow" style={{ width: '20%' }} />
-    //       <Paper className={classes.paper}>
-    //         Get results!
-    //       </Paper>
-    //     </Grid>
-    //   </Grid>
-    // </div >
-
-
     <>
       <div style={{ backgroundColor: '#5db0f0', padding: '20px' }}>
         <h1>
@@ -90,17 +68,47 @@ export default function Landing() {
           <p>
             Simplify your search for a daycare that works best for you and your child's needs.
         </p>
-          <a href="/map" style={{ textDecoration: 'none' }}>
-            <Button
-              variant="contained"
-              color="secondary"
-            >
-
-              Let's get started!
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={handleOpen}
+          >
+            Let's get started!
           </Button>
-          </a>
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            className={classes.modal}
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={open}>
+              <div className={classes.paper} style={{ textAlign: 'center' }}>
+                <h2 id="transition-modal-title">
+                  Start Your Search In Your Area
+                </h2>
+                <p id="transition-modal-description">
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onLocationClick={handleLocationClick}
+                  >
+                    <a href="/map" style={{ textDecoration: 'none', color: 'white' }}>
+                      <BiCurrentLocation style={{ margin: 'auto', marginRight: '10px' }} />
+                      Use my location
+                    </a>
+                  </Button>
+                </p>
+              </div>
+            </Fade>
+          </Modal>
         </div>
-      </div>
+      </div >
       <section>
         <p style={{ textAlign: 'center', padding: '10px', marginTop: '30px' }}>
           How does BabyMe work?
@@ -108,32 +116,32 @@ export default function Landing() {
         <div style={{ display: 'flex', margin: 'auto' }}>
           <img src={daycareLogo}
             alt="stacked toy blocks"
-            style={{ width: '200px' }}
+            style={{ width: '200px', height: '200px' }}
           />
           <div>
             <Grid item xs={6} sm={3} style={{ textAlign: 'center' }}>
               <img src={daycareArrowBlue} alt="blue arrow" style={{ width: '20%' }} />
-              <Paper className={classes.paper}>
+              <Paper style={{ boxShadow: 'none' }}>
                 Enter your location
-          </Paper>
+              </Paper>
             </Grid>
             <Grid item xs={6} sm={3} style={{ textAlign: 'center' }}>
               <img src={daycareArrowPink} alt="blue arrow" style={{ width: '20%' }} />
-              <Paper className={classes.paper}>
+              <Paper style={{ boxShadow: 'none' }}>
                 Visit a list of daycares
-          </Paper>
+              </Paper>
             </Grid>
             <Grid item xs={6} sm={3} style={{ textAlign: 'center' }}>
               <img src={daycareArrowGreen} alt="blue arrow" style={{ width: '20%' }} />
-              <Paper className={classes.paper}>
+              <Paper style={{ boxShadow: 'none' }}>
                 Customize your search
-          </Paper>
+              </Paper>
             </Grid>
             <Grid item xs={6} sm={3} style={{ textAlign: 'center' }}>
               <img src={daycareArrowPurple} alt="blue arrow" style={{ width: '20%' }} />
-              <Paper className={classes.paper}>
+              <Paper style={{ boxShadow: 'none' }}>
                 Get results!
-          </Paper>
+              </Paper>
             </Grid>
           </div>
         </div>

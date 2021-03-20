@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as daycaresData from './data/geoJson.json';
 import IconMarker from './IconMarker';
+import LocationMarker from './LocationMarker';
 import Form from './Form';
 import './App.css';
 
@@ -32,6 +33,7 @@ export default function Map() {
   return (
     <>
       <Form />
+      <LocationMarker />
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}

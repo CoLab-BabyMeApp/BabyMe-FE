@@ -58,15 +58,8 @@ export default function Filter() {
       }
       console.log(daycare, sortedDaycares, 'filter');
     });
-
-    //   daycaresData.map((daycare) => {
-    //     let component
-    //     switch (daycare{
-    //       case 'daycare.infant':
-    //         component = sortedDaycares.push(daycare)
-    //     })
-    // }));
   };
+
   return (
     <>
       <FormControl component="fieldset" style={{ padding: '10px', marginTop: '10px' }}>
