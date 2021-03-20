@@ -1,26 +1,30 @@
 import React, { useState } from 'react';
-import { Marker, Popup, useMapEvents } from 'react-leaflet';
-import markerIconPng from 'leaflet/dist/images/marker-icon.png';
-import { Icon } from 'leaflet';
+import ReactMapGL, { GeolocateControl } from "react-map-gl";
+
+
+const geolocateControlStyle = {
+  right: 10,
+  top: 10
+};
 
 export default function LocationMarker() {
 
-  const [position, setPosition] = useState(null)
-  const map = useMapEvents({
-    click() {
-      map.locate()
-    },
-    locationfound(e) {
-      setPosition(e.latlng)
-      map.flyTo(e.latlng, map.getZoom())
-    },
-  })
+  const [viewport, setViewport] = React.useState({
+    longitude: -122.45,
+    latitude: 37.78,
+    zoom: 14
+  });
 
-  return position === null ? null : (
+  return (
     <>
-      <Marker position={position} icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41] })}>
-        <Popup>You are here</Popup>
-      </Marker>
+      <ReactMapGL {...viewport} width="100vw" height="100vh" onViewportChange={setViewport}>
+        <GeolocateControl
+          style={geolocateControlStyle}
+          positionOptions={{ enableHighAccuracy: true }}
+          trackUserLocation={true}
+          auto
+        />
+      </ReactMapGL>
     </>
   )
 }

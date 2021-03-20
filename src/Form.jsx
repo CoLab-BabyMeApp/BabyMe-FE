@@ -8,7 +8,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-//import MenuIcon from '@material-ui/icons/Menu';
 import { MdFilterList } from "react-icons/md";
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
@@ -16,7 +15,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Filter from './Filter';
-import TransitionsModal from './Modal';
+import TransitionsModal from './TransitionsModal';
 
 const drawerWidth = 240;
 
@@ -91,25 +90,8 @@ const useStyles = makeStyles((theme) => ({
 export default function PersistentDrawerRight() {
   const classes = useStyles();
   const theme = useTheme();
-  // const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  // const handleClose = () => {
-  //   setOpen(false);
-  // };
 
   const [open, setOpen] = useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
 
   return (
     <div className={classes.root}>
@@ -125,67 +107,8 @@ export default function PersistentDrawerRight() {
             BabyMe
           </Typography>
           <TransitionsModal />
-
         </Toolbar>
       </AppBar>
-
-      <TransitionsModal />
-
-      {/* <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })} style={{ padding: '0px 0px 0px 0px' }}
-      >
-        <div className={classes.drawerHeader} />
-      </main>
-
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="right"
-        open={open}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-
-        <Filter />
-
-        <Divider />
-      </Drawer> */}
-
-
-      {/* <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button> */}
-
-      {/* <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          className={classes.modal}
-          open={open}
-          onClose={handleClose}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
-          }}
-        >
-          <Fade in={open}>
-            <div className={classes.paper}>
-              <h2 id="transition-modal-title">Transition modal</h2>
-              <p id="transition-modal-description">react-transition-group animates me.</p>
-            </div>
-          </Fade>
-          <Filter />
-        </Modal> */}
-
     </div >
   );
 }
