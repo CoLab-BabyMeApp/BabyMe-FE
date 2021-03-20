@@ -4,7 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import IconButton from '@material-ui/core/IconButton';
-import { MdFilterList } from 'react-icons/md';
+import { FaFilter } from "react-icons/fa";
 import Filter from './Filter';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
@@ -36,7 +35,7 @@ export default function TransitionsModal() {
   return (
     <div>
       <IconButton type="button" onClick={handleOpen}>
-        <MdFilterList />
+        <FaFilter />
       </IconButton>
       <Modal
         aria-labelledby="transition-modal-title"
