@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import MapGL, { Marker, Popup } from 'react-map-gl';
+import MapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
 import IconMarker from './IconMarker';
 import * as daycaresData from './data/geoJson.json';
@@ -16,6 +16,10 @@ export default function Search() {
     longitude: -122.4376,
     zoom: 10
   });
+  const geolocateControlStyle = {
+    right: 10,
+    top: 10
+  };
   const mapRef = useRef();
   const handleViewportChange = useCallback(
     (newViewport) => setViewport(newViewport),
@@ -53,7 +57,13 @@ export default function Search() {
           mapboxApiAccessToken={token}
           position="top-left"
         />
-
+        <GeolocateControl
+          style={geolocateControlStyle}
+          positionOptions={{ enableHighAccuracy: true }}
+          trackUserLocation={true}
+          auto
+          style={{ bottom: '70px', marginLeft: '330px' }}
+        />
         {daycaresData.features.map(daycare => (
           <Marker
             key={daycare.properties.id}
