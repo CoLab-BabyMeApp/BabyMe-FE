@@ -13,7 +13,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { BiCurrentLocation } from 'react-icons/bi';
-import { HashLink as Link } from "react-router-hash-link";
+import { FaSearchLocation } from "react-icons/fa";
 import './App.css';
 
 
@@ -55,8 +55,12 @@ export default function Landing() {
   };
 
   const handleLocationClick = () => {
-    window.location("/map");
+    window.location('/map');
   }
+
+  // const handleZipCodeClick = () => {
+  //   window.location('/search');
+  // }
 
   return (
     <>
@@ -103,6 +107,17 @@ export default function Landing() {
                       Use my location
                     </a>
                   </Button>
+                  {/* <p>or</p>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onZipCodeClick={handleZipCodeClick}
+                  >
+                    <a href="/map" style={{ textDecoration: 'none', color: 'white' }}>
+                      <FaSearchLocation style={{ margin: 'auto', marginRight: '10px' }} />
+                      Enter a zip code
+                    </a>
+                  </Button> */}
                 </p>
               </div>
             </Fade>
