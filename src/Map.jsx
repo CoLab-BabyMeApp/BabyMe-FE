@@ -1,49 +1,59 @@
-import React, { useEffect, useState, useRef } from 'react';
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import * as daycaresData from './data/geoJson.json';
+import React, { useState, useRef, useCallback } from 'react';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import MapGL, { Marker, Popup } from 'react-map-gl';
+import Geocoder from 'react-map-gl-geocoder';
 import IconMarker from './IconMarker';
-import LocationMarker from './LocationMarker';
+import * as daycaresData from './data/geoJson.json';
 import Form from './Form';
-import Search from './Search';
-import './App.css';
 
-export default function Map() {
+const token = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+
+export default function Search() {
 
   const [viewport, setViewport] = useState({
-    latitude: 47.608013,
-    longitude: -122.335167,
-    width: "100vw",
-    height: "100vh",
+    latitude: 37.7577,
+    longitude: -122.4376,
     zoom: 10
   });
+  const mapRef = useRef();
+  const handleViewportChange = useCallback(
+    (newViewport) => setViewport(newViewport),
+    []
+  );
   const [selectedDaycare, setSelectedDaycare] = useState(null);
 
-  useEffect(() => {
-    const listener = e => {
-      if (e.key === "Escape") {
-        setSelectedDaycare(null);
-      }
-    };
-    window.addEventListener("keydown", listener);
+  const handleGeocoderViewportChange = useCallback(
+    (newViewport) => {
+      const geocoderDefaultOverrides = { transitionDuration: 1000 };
 
-    return () => {
-      window.removeEventListener("keydown", listener);
-    };
-  }, []);
+      return handleViewportChange({
+        ...newViewport,
+        ...geocoderDefaultOverrides
+      });
+    },
+    [handleViewportChange]
+  );
 
   return (
-    <>
+    <div style={{ height: "100vh", marginTop: '55px' }}>
       <Form />
-      {/* <LocationMarker /> */}
-      <Search />
-      <ReactMapGL
+      <MapGL
+        ref={mapRef}
         {...viewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        width="100%"
+        height="100%"
+        onViewportChange={handleViewportChange}
+        mapboxApiAccessToken={token}
         mapStyle="mapbox://styles/mapbox/streets-v11"
-        onViewportChange={viewport => {
-          setViewport(viewport);
-        }}
       >
+        <Geocoder
+          mapRef={mapRef}
+          onViewportChange={handleGeocoderViewportChange}
+          mapboxApiAccessToken={token}
+          position="top-left"
+        />
+
         {daycaresData.features.map(daycare => (
           <Marker
             key={daycare.properties.id}
@@ -57,7 +67,6 @@ export default function Map() {
             <IconMarker />
           </Marker>
         ))}
-
         {selectedDaycare ? (
           <Popup
             latitude={selectedDaycare.geometry.coordinates[1]}
@@ -75,7 +84,7 @@ export default function Map() {
             </div>
           </Popup>
         ) : null}
-      </ReactMapGL>
-    </>
+      </MapGL>
+    </div>
   );
 }
