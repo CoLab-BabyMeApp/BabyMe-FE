@@ -63,18 +63,95 @@ export default function Filter() {
   return (
     <>
       <FormControl component="fieldset" style={{ padding: '10px', marginTop: '10px' }}>
-        <FormLabel component="legend" style={{ fontWeight: 'bold' }}>Age</FormLabel>
-        <RadioGroup aria-label="age" name="age" value={value} onChange={handleChange}>
-          <FormControlLabel value="infant" control={<Radio />} label="0 -1" />
-          <FormControlLabel value="toddler" control={<Radio />} label="2 - 3" />
-          <FormControlLabel value="child" control={<Radio />} label="3 - 4" />
+        <FormLabel component="legend" style={{ fontWeight: 'bold' }}>
+          Age Range (years)
+        </FormLabel>
+        <RadioGroup aria-label="age" name="age" value={value} onChange={handleChange} style={{ padding: '2px' }}>
+          <FormControlLabel
+            value="infant"
+            control={<Radio />}
+            label="0 -1 years"
+            style={{ padding: '2px' }}
+          />
+          <FormControlLabel
+            value="toddler"
+            control={<Radio />}
+            label="2 - 3 years"
+            style={{ padding: '2px' }}
+          />
+          <FormControlLabel
+            value="child"
+            control={<Radio />}
+            label="3 - 4 years"
+            style={{ padding: '2px' }}
+          />
+        </RadioGroup>
+        <Divider
+          style={{ margin: '10px', marginBottom: '20px' }}
+        />
+        <FormLabel component="legend" style={{ fontWeight: 'bold' }}>
+          Distance (search within)
+        </FormLabel>
+        <RadioGroup aria-label="age" name="age" value={value} onChange={handleChange} style={{ padding: '2px' }}>
+          <FormControlLabel
+            value="infant"
+            control={<Radio />}
+            label="0 -1 years"
+            style={{ padding: '2px' }}
+          />
+          <FormControlLabel
+            value="toddler"
+            control={<Radio />}
+            label="2 - 3 years"
+            style={{ padding: '2px' }}
+          />
+          <FormControlLabel
+            value="child"
+            control={<Radio />}
+            label="3 - 4 years"
+            style={{ padding: '2px' }}
+          />
+        </RadioGroup>
+        <Divider
+          style={{ margin: '10px', marginBottom: '20px' }}
+        />
+        <FormLabel component="legend" style={{ fontWeight: 'bold' }}>
+          Price Range
+        </FormLabel>
+        <RadioGroup aria-label="age" name="age" value={value} onChange={handleChange} style={{ padding: '2px' }}>
+          <FormControlLabel
+            value="infant"
+            control={<Radio />}
+            label="0 -1 years"
+            style={{ padding: '2px' }}
+          />
+          <FormControlLabel
+            value="toddler"
+            control={<Radio />}
+            label="2 - 3 years"
+            style={{ padding: '2px' }}
+          />
+          <FormControlLabel
+            value="child"
+            control={<Radio />}
+            label="3 - 4 years"
+            style={{ padding: '2px' }}
+          />
         </RadioGroup>
       </FormControl>
-      <Divider />
+      <Divider
+        style={{ margin: '10px', marginBottom: '20px' }}
+      />
       <div>
-        <Button aria-describedby={id} variant="contained" color="default" onClick={handleClick}>
+        <Button
+          aria-describedby={id}
+          variant="contained"
+          color="secondary"
+          onClick={handleClick}
+        >
           Filter Daycares
       </Button>
+
         <Popover
           id={id}
           open={open}
