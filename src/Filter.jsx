@@ -9,6 +9,9 @@ import Popover from '@material-ui/core/Popover';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
 import Menu from './Menu';
 import daycaresData from './data/daycaresData';
@@ -20,7 +23,14 @@ const useStyles = makeStyles((theme) => ({
   alert: {
     padding: theme.spacing(1),
     margin: theme.spacing(1, 0),
-    border: '1px solid',
+    border: '1px solid'
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
   },
 }));
 
@@ -28,7 +38,12 @@ export default function Filter() {
   const classes = useStyles();
   const [value, setValue] = useState('');
   const [filteredDaycares, setFilteredDaycares] = useState([]);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [hours, setHours] = useState('');
+
+  const handleChangeDropdown = (e) => {
+    setHours(e.target.value);
+  };
 
   const handleClick = (e) => {
     setAnchorEl(e.currentTarget);
@@ -40,6 +55,10 @@ export default function Filter() {
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
+
+  const handleChangeDistance = (e) => {
+    console.log(e.target.value, 'distance');
+  }
 
   const handleChange = (e) => {
     console.log(e.target.value, 'hello');
@@ -58,8 +77,8 @@ export default function Filter() {
         sortedDaycares.push(daycare)
       }
       console.log(daycare, sortedDaycares, 'filter');
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -90,24 +109,24 @@ export default function Filter() {
         <Divider
           style={{ margin: '10px', marginBottom: '20px' }}
         />
-        <FormLabel component="legend" style={{ fontWeight: 'bold' }}>
+        {/* <FormLabel component="legend" style={{ fontWeight: 'bold' }}>
           Distance (search within)
         </FormLabel>
-        <RadioGroup aria-label="age" name="age" value={value} onChange={handleChange} style={{ padding: '2px' }}>
+        <RadioGroup aria-label="hours" name="hours" value={value} onChange={handleChangeDistance} style={{ padding: '2px' }}>
           <FormControlLabel
-            value="infant"
+            value={value}
             control={<Radio />}
             label="5 miles"
             style={{ padding: '2px' }}
           />
           <FormControlLabel
-            value="toddler"
+            value={value}
             control={<Radio />}
             label="10 miles"
             style={{ padding: '2px' }}
           />
           <FormControlLabel
-            value="child"
+            value={value}
             control={<Radio />}
             label="15 miles"
             style={{ padding: '2px' }}
@@ -125,32 +144,42 @@ export default function Filter() {
         <FormLabel component="legend" style={{ fontWeight: 'bold' }}>
           Price Range
         </FormLabel>
-        <form noValidate autoComplete="off" style={{}}>
-          $
+        <form noValidate autoComplete="off" style={{ display: 'flex', flexDirection: 'row', padding: '10px', flexWrap: 'wrap' }}>
+          <div style={{ flexDirection: 'row' }}>
+            $
           <TextField
-            id="filled-basic"
-            variant="filled"
-          />
-          $
+              id="filled-basic"
+              variant="filled"
+              style={{ padding: '5px' }}
+            />
+          min
+          </div>
+          <br />
+          <div style={{ flexDirection: 'row' }}>
+            $
           <TextField
-            id="filled-basic"
-            variant="filled"
-          />
-        </form>
+              id="filled-basic"
+              variant="filled"
+              style={{ padding: '5px' }}
+            />
+          max
+          </div>
+        </form> */}
+        {/* <Divider
+          style={{ margin: '10px', marginBottom: '20px' }}
+        /> */}
       </FormControl>
-      <Divider
-        style={{ margin: '10px', marginBottom: '20px' }}
-      />
       <div>
-        <Button
-          aria-describedby={id}
-          variant="contained"
-          color="secondary"
-          onClick={handleClick}
-        >
-          Filter Daycares
-      </Button>
-
+        <div style={{ textAlign: 'center' }}>
+          <Button
+            aria-describedby={id}
+            variant="contained"
+            color="secondary"
+            onClick={handleClick}
+          >
+            Filter Daycares
+        </Button>
+        </div>
         <Popover
           id={id}
           open={open}
