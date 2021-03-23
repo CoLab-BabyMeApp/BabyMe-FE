@@ -58,9 +58,9 @@ export default function Landing() {
     window.location('/map');
   }
 
-  // const handleZipCodeClick = () => {
-  //   window.location('/search');
-  // }
+  const handleZipCodeClick = () => {
+    window.location('/search');
+  }
 
   return (
     <>
@@ -107,7 +107,7 @@ export default function Landing() {
                       Use my location
                     </a>
                   </Button>
-                  {/* <p>or</p>
+                  <p>or</p>
                   <Button
                     variant="contained"
                     color="secondary"
@@ -117,7 +117,7 @@ export default function Landing() {
                       <FaSearchLocation style={{ margin: 'auto', marginRight: '10px' }} />
                       Enter a zip code
                     </a>
-                  </Button> */}
+                  </Button>
                 </p>
               </div>
             </Fade>
