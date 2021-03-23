@@ -17,7 +17,8 @@ module.exports = [
     "snacks": true,
     "covidPlan": true,
     "lat": "47.605060",
-    "lng": "-122.337640"
+    "lng": "-122.337640",
+    "price": "$$"
   },
   {
     "id": "2",
@@ -37,7 +38,8 @@ module.exports = [
     "snacks": true,
     "covidPlan": true,
     "lat": "43.681930",
-    "lng": "-70.191070"
+    "lng": "-70.191070",
+    "price": "$$$"
   },
   {
     "id": "3",
@@ -46,7 +48,7 @@ module.exports = [
     "city": "Portland",
     "state": "OR",
     "zipCode": "97124",
-    "image": "https://ucarecdn.com/e5bfc65c-ecd9-45cb-b983-f315a7d46ebe/-/crop/3200x739/0,13/-/resize/2048x470/",
+    "image": "https://ucarecdn.com/603a58d9-06c9-4bd4-bbc6-bfb24083714a/-/resize/650/-/quality/best/",
     "phoneNumber": "971-206-6030",
     "day": true,
     "evening": true,
@@ -57,7 +59,8 @@ module.exports = [
     "snacks": true,
     "covidPlan": true,
     "lat": "45.549630",
-    "lng": "-122.905370"
+    "lng": "-122.905370",
+    "price": "$$"
   },
   {
     "id": "4",
@@ -77,7 +80,8 @@ module.exports = [
     "snacks": true,
     "covidPlan": false,
     "lat": "30.703830",
-    "lng": "-88.124340"
+    "lng": "-88.124340",
+    "price": "$"
   },
   {
     "id": "5",
@@ -97,7 +101,8 @@ module.exports = [
     "snacks": true,
     "covidPlan": false,
     "lat": "47.555150",
-    "lng": "-122.375840"
+    "lng": "-122.375840",
+    "price": "$"
   },
   {
     "id": "6",
@@ -117,7 +122,8 @@ module.exports = [
     "snacks": true,
     "covidPlan": true,
     "lat": "45.468830",
-    "lng": "-122.653150"
+    "lng": "-122.653150",
+    "price": "$$$"
   },
   {
     "id": "7",
@@ -137,7 +143,8 @@ module.exports = [
     "snacks": true,
     "covidPlan": false,
     "lat": "30.670630",
-    "lng": "-88.196320"
+    "lng": "-88.196320",
+    "price": "$$"
   },
   {
     "id": "8",
@@ -157,7 +164,8 @@ module.exports = [
     "snacks": true,
     "covidPlan": true,
     "lat": "30.685370",
-    "lng": "-88.190180"
+    "lng": "-88.190180",
+    "price": "$$$"
   },
   {
     "id": "9",
@@ -177,6 +185,7 @@ module.exports = [
     "snacks": true,
     "covidPlan": true,
     "lat": "47.608960",
-    "lng": "-122.332080"
+    "lng": "-122.332080",
+    "price": "$$"
   }
 ];
