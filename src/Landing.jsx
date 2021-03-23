@@ -59,7 +59,7 @@ export default function Landing() {
   }
 
   const handleZipCodeClick = () => {
-    window.location('/search');
+    window.location('/map');
   }
 
   return (
