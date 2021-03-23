@@ -8,6 +8,7 @@ import Divider from '@material-ui/core/Divider';
 import Popover from '@material-ui/core/Popover';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Menu from './Menu';
 import daycaresData from './data/daycaresData';
@@ -96,19 +97,25 @@ export default function Filter() {
           <FormControlLabel
             value="infant"
             control={<Radio />}
-            label="0 -1 years"
+            label="5 miles"
             style={{ padding: '2px' }}
           />
           <FormControlLabel
             value="toddler"
             control={<Radio />}
-            label="2 - 3 years"
+            label="10 miles"
             style={{ padding: '2px' }}
           />
           <FormControlLabel
             value="child"
             control={<Radio />}
-            label="3 - 4 years"
+            label="15 miles"
+            style={{ padding: '2px' }}
+          />
+          <FormControlLabel
+            value="child"
+            control={<Radio />}
+            label="20 miles"
             style={{ padding: '2px' }}
           />
         </RadioGroup>
@@ -118,26 +125,18 @@ export default function Filter() {
         <FormLabel component="legend" style={{ fontWeight: 'bold' }}>
           Price Range
         </FormLabel>
-        <RadioGroup aria-label="age" name="age" value={value} onChange={handleChange} style={{ padding: '2px' }}>
-          <FormControlLabel
-            value="infant"
-            control={<Radio />}
-            label="0 -1 years"
-            style={{ padding: '2px' }}
+        <form noValidate autoComplete="off" style={{}}>
+          $
+          <TextField
+            id="filled-basic"
+            variant="filled"
           />
-          <FormControlLabel
-            value="toddler"
-            control={<Radio />}
-            label="2 - 3 years"
-            style={{ padding: '2px' }}
+          $
+          <TextField
+            id="filled-basic"
+            variant="filled"
           />
-          <FormControlLabel
-            value="child"
-            control={<Radio />}
-            label="3 - 4 years"
-            style={{ padding: '2px' }}
-          />
-        </RadioGroup>
+        </form>
       </FormControl>
       <Divider
         style={{ margin: '10px', marginBottom: '20px' }}
