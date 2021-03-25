@@ -16,24 +16,31 @@ export default function Menu() {
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1a-content"
         id="panel1a-header"
+        style={{ borderRadius: '5px' }}
       >
-        <Typography>
+        <Typography style={{ fontFamily: 'Average Sans, sans-serif', lineHeight: '26px', fontSize: '20px' }}>
           {daycare.name}
         </Typography>
       </AccordionSummary>
-      <div style={{}}>
+      <div style={{ backgroundColor: '#0F90D1', borderRadius: '5px', color: 'white' }}>
         <AccordionDetails>
           <Typography>
             <img
               src={daycare.image}
               alt="kids at daycare"
-              style={{ height: '150px', margin: '2px', }}
+              style={{ height: '150px', margin: '2px', marginTop: '10px', borderRadius: '5px' }}
             />
             <br />
-            <div style={{}}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '16px', display: 'flex', flexWrap: 'wrap' }}>
               <PhoneIcon /> {daycare.phoneNumber}
               <br />
-              {daycare.price}
+              <span style={{ marginLeft: '90px' }}>
+                <FaHeart />
+              </span>
+              <br />
+              <div style={{ marginLeft: '30px', fontWeight: 'bold' }}>
+                {daycare.price}
+              </div>
             </div>
           </Typography>
         </AccordionDetails>

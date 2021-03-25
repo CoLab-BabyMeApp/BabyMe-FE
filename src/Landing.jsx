@@ -60,8 +60,8 @@ export default function Landing() {
 
   return (
     <>
-      <div style={{ padding: '20px' }}>
-        <h1 style={{ color: '#E0436B', fontFamily: 'Righteous, cursive', fontSize: '36px', fontWeight: '400', lineHeight: '45px', letterHeight: '45px' }}>
+      <div>
+        <h1 style={{ color: '#E0436B', fontFamily: 'Righteous, cursive', fontSize: '36px', fontWeight: '400', lineHeight: '45px', letterHeight: '45px', marginLeft: '20px' }}>
           BabyMe
         </h1>
         <div style={{ textAlign: 'center' }}>
@@ -72,6 +72,7 @@ export default function Landing() {
             variant="contained"
             color="secondary"
             onClick={handleOpen}
+            style={{ marginTop: '20px' }}
           >
             Let's get started!
           </Button>
@@ -88,10 +89,15 @@ export default function Landing() {
             }}
           >
             <Fade in={open}>
-              <div className={classes.paper} style={{ textAlign: 'center' }}>
+              <div className={classes.paper} style={{ textAlign: 'center', fontFamily: 'Average Sans, sans-serif' }}>
                 <h2 id="transition-modal-title">
-                  Start Your Search In Your Area
+                  Start A Search
                 </h2>
+                <p style={{ paddingBottom: '10px' }}>
+                  Please select your method
+                  <br />
+                  for finding your location.
+                </p>
                 <p id="transition-modal-description">
                   <Button
                     variant="contained"
@@ -99,21 +105,21 @@ export default function Landing() {
                     onLocationClick={handleLocationClick}
                   >
                     <a href="/map" style={{ textDecoration: 'none', color: 'white' }}>
-                      <BiCurrentLocation style={{ margin: 'auto', marginRight: '10px' }} />
+                      <BiCurrentLocation style={{ margin: 'auto', marginRight: '10px', fontFamily: 'Nunito, sans-serif' }} />
                       Use my location
                     </a>
                   </Button>
-                  <p>or</p>
+                  {/* <p>Or</p>
                   <Button
                     variant="contained"
                     color="secondary"
                     onZipCodeClick={handleZipCodeClick}
                   >
                     <a href="/map" style={{ textDecoration: 'none', color: 'white' }}>
-                      <FaSearchLocation style={{ margin: 'auto', marginRight: '10px' }} />
+                      <FaSearchLocation style={{ margin: 'auto', marginRight: '10px', fontFamily: 'Nunito, sans-serif' }} />
                       Enter a zip code
                     </a>
-                  </Button>
+                  </Button> */}
                 </p>
               </div>
             </Fade>
