@@ -6,6 +6,7 @@ import Geocoder from 'react-map-gl-geocoder';
 import IconMarker from './IconMarker';
 import * as daycaresData from './data/geoJson.json';
 import Form from './Form';
+import './App.css';
 
 const token = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -62,6 +63,7 @@ export default function Search() {
           onViewportChange={handleGeocoderViewportChange}
           mapboxApiAccessToken={token}
           position="top-left"
+          className="geocoder"
         />
         <GeolocateControl
           style={geolocateControlStyle}
@@ -91,7 +93,7 @@ export default function Search() {
               setSelectedDaycare(null);
             }}
           >
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center', width: '200px' }}>
               <h2>{selectedDaycare.properties.name}</h2>
               <p>{selectedDaycare.properties.streetAddress}</p>
               <span>{selectedDaycare.properties.city}</span>, <span></span>

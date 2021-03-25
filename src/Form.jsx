@@ -86,14 +86,18 @@ export default function Form() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar style={{ backgroundColor: "#5db0f0" }}
+      <AppBar style={{ backgroundColor: 'white' }}
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >
         <Toolbar>
-          <Typography variant="h5" noWrap className={classes.title}>
+          <Typography
+            variant="h5"
+            noWrap className={classes.title}
+            style={{ color: '#E0436B', fontFamily: 'Righteous, cursive', fontSize: '36px', fontWeight: '400', lineHeight: '45px', letterHeight: '45px', marginLeft: '5px', paddingTop: '12px', paddingBottom: '12px' }}
+          >
             BabyMe
           </Typography>
           <TransitionsModal />
