@@ -167,7 +167,7 @@ export default function Landing() {
           <img
             src={girlWithBlocks}
             alt="Kids playing at table"
-            style={{ width: '100%', bottom: '0', position: 'fixed' }}
+            style={{ width: '100%', bottom: '0' }}
           />
           <p style={{ display: 'flex', position: 'absolute', bottom: '0px', paddingLeft: '5px', color: 'white', fontFamily: 'Average Sans, sans-serif', lineHeight: '24px', backgroundColor: 'rgba(0, 0, 0, .3)', width: '100%', padding: '10px', marginBottom: '0px' }}>
             Simplify your search for a

@@ -96,9 +96,14 @@ export default function Header() {
           <Typography
             variant="h5"
             noWrap className={classes.title}
-            style={{ color: '#E0436B', fontFamily: 'Righteous, cursive', fontSize: '36px', fontWeight: '400', lineHeight: '45px', letterHeight: '45px', marginLeft: '5px', paddingTop: '12px', paddingBottom: '12px' }}
+            style={{ fontFamily: 'Righteous, cursive', fontSize: '36px', fontWeight: '400', lineHeight: '45px', letterHeight: '45px', marginLeft: '5px', paddingTop: '12px', paddingBottom: '12px' }}
           >
-            BabyMe
+            <a
+              href="/"
+              style={{ color: '#E0436B', textDecoration: 'none' }}
+            >
+              BabyMe
+            </a>
           </Typography>
           <TransitionsModal />
         </Toolbar>
