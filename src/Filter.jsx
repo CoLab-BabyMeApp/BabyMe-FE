@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 // import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
 import Menu from './Menu';
-import daycaresData from './data/daycaresData';
+import * as daycaresData from './data/geoJson.json';
 
 const useStyles = makeStyles((theme) => ({
   typography: {
@@ -66,14 +66,14 @@ export default function Filter() {
     setValue(e.target.value);
     let sortedDaycares = [];
 
-    daycaresData.map((daycare) => {
+    daycaresData.features.map((daycare) => {
       if (e.target.value === null) {
         alert('Please make a selection.')
-      } else if (daycare.infant === true && e.target.value === 'infant') {
+      } else if (daycare.properties.infant === true && e.target.value === 'infant') {
         sortedDaycares.push(daycare)
-      } else if (daycare.toddler === true && e.target.value === 'toddler') {
+      } else if (daycare.properties.toddler === true && e.target.value === 'toddler') {
         sortedDaycares.push(daycare)
-      } else if (daycare.child === true && e.target.value === 'child') {
+      } else if (daycare.properties.child === true && e.target.value === 'child') {
         sortedDaycares.push(daycare)
       }
       console.log(daycare, sortedDaycares, 'filter');

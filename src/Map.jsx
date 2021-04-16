@@ -5,12 +5,12 @@ import MapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
 import IconMarker from './IconMarker';
 import * as daycaresData from './data/geoJson.json';
-import Form from './Form';
+import Header from './Header';
 import './App.css';
 
 const token = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
-export default function Search() {
+export default function Map() {
 
   const [viewport, setViewport] = useState({
     latitude: 37.7577,
@@ -42,7 +42,7 @@ export default function Search() {
 
   return (
     <div style={{ height: "100vh", marginTop: '55px' }}>
-      <Form />
+      <Header />
       <MapGL
         ref={mapRef}
         {...viewport}
