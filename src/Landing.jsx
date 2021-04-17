@@ -9,7 +9,6 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { BiCurrentLocation } from 'react-icons/bi';
-import { FaSearchLocation } from "react-icons/fa";
 import './App.css';
 
 
@@ -126,59 +125,61 @@ export default function Landing() {
           </Modal>
         </div>
       </div >
-      <section>
+      <main>
         <p style={{ textAlign: 'center', marginTop: '30px', fontFamily: 'Righteous, cursive', fontSize: '24px', lineHeight: '30px', color: '#E0436B' }}>
           How does BabyMe work?
         </p>
-        <div style={{ display: 'flex', margin: 'auto', backgroundColor: '#F9F9F9', padding: '20px', fontFamily: 'Average Sans, sans-serif' }}>
-          <img
-            src={clipartWoman}
-            alt="pregnant woman"
-            style={{ height: '240px' }}
-          />
-          <div style={{ margin: 'auto' }}>
-            <Grid item xs={12} sm={3} style={{ textAlign: 'left' }}>
-              <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
-                Enter your location
+        <section style={{ backgroundColor: '#F9F9F9' }}>
+          <div style={{ display: 'flex', backgroundColor: '#F9F9F9', padding: '20px', fontFamily: 'Average Sans, sans-serif', maxWidth: '500px', margin: 'auto' }}>
+            <img
+              src={clipartWoman}
+              alt="pregnant woman"
+              style={{ height: '240px', margin: 'auto' }}
+            />
+            <div style={{ margin: 'auto' }}>
+              <Grid style={{ textAlign: 'left' }}>
+                <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
+                  Enter your location
               </Paper>
-            </Grid>
-            <br />
-            <Grid item xs={12} sm={3} style={{ textAlign: 'left' }}>
-              <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
-                Visit a list of daycares
+              </Grid>
+              <br />
+              <Grid style={{ textAlign: 'left' }}>
+                <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
+                  Visit a list of daycares
               </Paper>
-            </Grid>
-            <br />
-            <Grid item xs={12} sm={3} style={{ textAlign: 'left' }}>
-              <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
-                Customize your search
+              </Grid>
+              <br />
+              <Grid style={{ textAlign: 'left' }}>
+                <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
+                  Customize your search
               </Paper>
-            </Grid>
-            <br />
-            <Grid item xs={12} sm={3} style={{ textAlign: 'left' }}>
-              <Paper style={{ boxShadow: 'none', color: '#0F90D1', fontFamily: 'Average Sans, sans-serif', fontSize: '36px', lineHeight: '47px', backgroundColor: '#F9F9F9' }}>
-                Get results!
+              </Grid>
+              <br />
+              <Grid style={{ textAlign: 'left' }}>
+                <Paper style={{ boxShadow: 'none', color: '#0F90D1', fontFamily: 'Average Sans, sans-serif', fontSize: '36px', lineHeight: '47px', backgroundColor: '#F9F9F9' }}>
+                  Get results!
               </Paper>
-            </Grid>
-            <br />
-            <div style={{ backgroundColor: '#F0C933', height: '20px', width: '100%', marginLeft: '5px' }}></div>
+              </Grid>
+              <br />
+              <div style={{ backgroundColor: '#F0C933', height: '20px', width: '100%', marginLeft: '5px' }}></div>
+            </div>
           </div>
-        </div>
-        <div>
-          <img
-            src={girlWithBlocks}
-            alt="Kids playing at table"
-            style={{ width: '100%', bottom: '0', position: 'fixed' }}
-          />
-          <p style={{ display: 'flex', position: 'absolute', bottom: '0px', paddingLeft: '5px', color: 'white', fontFamily: 'Average Sans, sans-serif', lineHeight: '24px', backgroundColor: 'rgba(0, 0, 0, .3)', width: '100%', padding: '10px', marginBottom: '0px' }}>
-            Simplify your search for a
+          <div style={{ position: 'relative' }}>
+            <img
+              src={girlWithBlocks}
+              alt="Kids playing at table"
+              style={{ width: '100%', bottom: '0' }}
+            />
+            <p style={{ display: 'flex', position: 'absolute', paddingLeft: '5px', color: 'white', fontFamily: 'Average Sans, sans-serif', lineHeight: '24px', backgroundColor: 'rgba(0, 0, 0, .3)', width: '100%', padding: '10px', marginBottom: '0px', bottom: '0px' }}>
+              Simplify your search for a
             <br />
             daycare that works best for
             <br />
             you & your child's needs.
           </p>
-        </div>
-      </section>
+          </div>
+        </section>
+      </main>
     </>
   );
 }

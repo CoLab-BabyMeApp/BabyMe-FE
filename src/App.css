@@ -9,14 +9,14 @@
 html, body {
   margin: 0px;
   padding: 0px;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   scroll-behavior: smooth;
-  overflow-y: hidden;
 }
 
 body {
   width: 100%;
+  height: 100%;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -50,4 +50,14 @@ h3 {
   height: 24px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  html, body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
 }

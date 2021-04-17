@@ -35,17 +35,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.191070,
-          43.681930
+          -122.679780,
+          45.513670
         ]
       },
       "properties": {
         "id": "2",
         "name": "Downtown Portland KinderCare",
-        "streetAddress": "227 Hillcrest Road",
+        "streetAddress": "1400 SW 5th Ave Ste 100",
         "city": "Portland",
         "state": "OR",
-        "zipCode": "36608",
+        "zipCode": "97201",
         "img": "https://www.koin.com/wp-content/uploads/sites/10/2019/07/KinderCare-C-07252019.png?w=1280",
         "phoneNumber": "800-709-8814",
         "day": true,
@@ -64,8 +64,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.191070,
-          43.681930
+          -122.679780,
+          45.531930
         ]
       },
       "properties": {
@@ -93,8 +93,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.905370,
-          45.549630
+          -88.124336,
+          30.703831
         ]
       },
       "properties": {
@@ -122,8 +122,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.375840,
-          47.555150
+          -122.375839,
+          47.555149
         ]
       },
       "properties": {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Form() {
+export default function Header() {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -96,9 +96,14 @@ export default function Form() {
           <Typography
             variant="h5"
             noWrap className={classes.title}
-            style={{ color: '#E0436B', fontFamily: 'Righteous, cursive', fontSize: '36px', fontWeight: '400', lineHeight: '45px', letterHeight: '45px', marginLeft: '5px', paddingTop: '12px', paddingBottom: '12px' }}
+            style={{ fontFamily: 'Righteous, cursive', fontSize: '36px', fontWeight: '400', lineHeight: '45px', letterHeight: '45px', marginLeft: '5px', paddingTop: '12px', paddingBottom: '12px' }}
           >
-            BabyMe
+            <a
+              href="/"
+              style={{ color: '#E0436B', textDecoration: 'none' }}
+            >
+              BabyMe
+            </a>
           </Typography>
           <TransitionsModal />
         </Toolbar>
