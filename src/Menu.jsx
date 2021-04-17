@@ -24,14 +24,14 @@ export default function Menu() {
       </AccordionSummary>
       <div style={{ backgroundColor: '#0F90D1', borderRadius: '5px', color: 'white' }}>
         <AccordionDetails>
-          <Typography>
+          <Typography style={{ margin: 'auto' }}>
             <img
               src={daycare.properties.img}
               alt="kids at daycare"
-              style={{ height: '150px', margin: '2px', marginTop: '10px', borderRadius: '5px', maxWidth: '270px' }}
+              style={{ height: '150px', marginTop: '10px', borderRadius: '5px', maxWidth: '270px' }}
             />
             <br />
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '16px', display: '', flexWrap: 'wrap', lineHeight: '25px' }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: '16px', flexWrap: 'wrap', lineHeight: '25px' }}>
               <span style={{ marginLeft: '250px' }}>
                 <FaHeart />
               </span>
