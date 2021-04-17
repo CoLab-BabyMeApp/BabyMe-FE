@@ -41,7 +41,7 @@ export default function Map() {
   );
 
   return (
-    <div style={{ height: "100vh", marginTop: '55px' }}>
+    <div style={{ height: "100vh", marginTop: '64px' }}>
       <Header />
       <MapGL
         ref={mapRef}
@@ -70,7 +70,7 @@ export default function Map() {
           positionOptions={{ enableHighAccuracy: true }}
           trackUserLocation={true}
           auto
-          style={{ bottom: '70px', marginLeft: '330px' }}
+          style={{ bottom: '70px', right: '30px' }}
         />
         {daycaresData.features.map(daycare => (
           <Marker
