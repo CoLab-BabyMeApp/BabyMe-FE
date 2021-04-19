@@ -51,12 +51,6 @@ export default function Map() {
         onViewportChange={handleViewportChange}
         mapboxApiAccessToken={token}
         mapStyle="mapbox://styles/mapbox/streets-v11"
-      // onClick={e => {
-      //   const features = mapRef.current.queryRenderedFeatures(e.geometry.coordinates, {
-      //     layers: ['daycares']
-      //   })
-      //   console.log(features)
-      // }}
       >
         <Geocoder
           mapRef={mapRef}

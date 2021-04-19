@@ -9,6 +9,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { BiCurrentLocation } from 'react-icons/bi';
+import { FaSearchLocation } from 'react-icons/fa';
 import './App.css';
 
 
@@ -98,7 +99,7 @@ export default function Landing() {
                   for finding your location.
                 </p>
                 <p id="transition-modal-description">
-                  <Button
+                  {/* <Button
                     variant="contained"
                     color="secondary"
                     onLocationClick={handleLocationClick}
@@ -108,7 +109,7 @@ export default function Landing() {
                       Use my location
                     </a>
                   </Button>
-                  {/* <p>Or</p>
+                  <p>Or</p> */}
                   <Button
                     variant="contained"
                     color="secondary"
@@ -118,7 +119,7 @@ export default function Landing() {
                       <FaSearchLocation style={{ margin: 'auto', marginRight: '10px', fontFamily: 'Nunito, sans-serif' }} />
                       Enter a zip code
                     </a>
-                  </Button> */}
+                  </Button>
                 </p>
               </div>
             </Fade>
