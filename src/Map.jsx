@@ -6,8 +6,6 @@ import Geocoder from 'react-map-gl-geocoder';
 import IconMarker from './IconMarker';
 import * as daycaresData from './data/geoJson.json';
 import Header from './Header';
-import mapboxgl from "mapbox-gl/dist/mapbox-gl";
-mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 import './App.css';
 
 const token = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
