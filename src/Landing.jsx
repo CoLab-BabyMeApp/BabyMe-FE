@@ -99,7 +99,7 @@ export default function Landing() {
                   for finding your location.
                 </p>
                 <p id="transition-modal-description">
-                  {/* <Button
+                  <Button
                     variant="contained"
                     color="secondary"
                     onLocationClick={handleLocationClick}
@@ -109,7 +109,7 @@ export default function Landing() {
                       Use my location
                     </a>
                   </Button>
-                  <p>Or</p> */}
+                  <p>Or</p>
                   <Button
                     variant="contained"
                     color="secondary"
