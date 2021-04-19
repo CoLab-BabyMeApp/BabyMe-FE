@@ -48,7 +48,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "worker-loader": "^3.0.8"
-  }
+  "devDependencies": {}
 }
