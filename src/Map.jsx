@@ -8,13 +8,6 @@ import * as daycaresData from './data/geoJson.json';
 import Header from './Header';
 import './App.css';
 
-import ReactMapGL, { Marker } from 'react-map-gl'
-import 'mapbox-gl/dist/mapbox-gl.css';
-import mapboxgl from 'mapbox-gl';
-
-// eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
-
 const token = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 export default function Map() {

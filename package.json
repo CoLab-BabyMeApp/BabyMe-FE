@@ -23,8 +23,7 @@
     "react-router-hash-link": "^2.4.0",
     "react-scripts": "4.0.3",
     "semantic-ui-react": "^2.0.3",
-    "web-vitals": "^1.1.0",
-    "worker-loader": "^3.0.8"
+    "web-vitals": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,7 +42,8 @@
       ">0.2%",
       "not ie 11",
       "not dead",
-      "not chrome 49"
+      "not chrome < 51",
+      "not safari < 10"
     ],
     "development": [
       "last 1 chrome version",
