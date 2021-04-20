@@ -1,11 +1,15 @@
 import React, { useState, useRef, useCallback } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from "mapbox-gl";
+import { StaticMap } from "react-map-gl";
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import MapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
 import IconMarker from './IconMarker';
 import * as daycaresData from './data/geoJson.json';
 import Header from './Header';
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 import './App.css';
 
 const token = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
