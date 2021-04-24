@@ -63,7 +63,7 @@ export default function Map() {
           style={geolocateControlStyle}
           positionOptions={{ enableHighAccuracy: true }}
           trackUserLocation={true}
-          auto
+          //auto
           style={{ bottom: '80px', right: '30px' }}
         />
         {daycaresData.features.map(daycare => (
