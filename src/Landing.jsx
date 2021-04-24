@@ -94,12 +94,17 @@ export default function Landing() {
                   Start A Search
                 </h2>
                 <p style={{ paddingBottom: '10px' }}>
-                  Please select your method
+                  {/* Please select your method
                   <br />
-                  for finding your location.
+                  for finding your location. */}
+                  Please enter a zip code
+                  <br />
+                  or
+                  <br />
+                  press the location button.
                 </p>
                 <p id="transition-modal-description">
-                  <Button
+                  {/* <Button
                     variant="contained"
                     color="secondary"
                     onLocationClick={handleLocationClick}
@@ -109,7 +114,7 @@ export default function Landing() {
                       Use my location
                     </a>
                   </Button>
-                  <p>Or</p>
+                  <p>Or</p> */}
                   <Button
                     variant="contained"
                     color="secondary"
@@ -117,7 +122,8 @@ export default function Landing() {
                   >
                     <a href="/map" style={{ textDecoration: 'none', color: 'white' }}>
                       <FaSearchLocation style={{ margin: 'auto', marginRight: '10px', fontFamily: 'Nunito, sans-serif' }} />
-                      Enter a zip code
+                      {/* Enter a zip code */}
+                      Enter
                     </a>
                   </Button>
                 </p>
