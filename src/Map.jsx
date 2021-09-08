@@ -1,10 +1,11 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import MapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
 import IconMarker from './IconMarker';
 import * as daycaresData from './data/geoJson.json';
+import { getDaycares } from '../src/services/daycaresApi';
 import Header from './Header';
 import './App.css';
 
@@ -39,6 +40,15 @@ export default function Map() {
     },
     [handleViewportChange]
   );
+
+  // useEffect(() => {
+  //   const fetchDaycares = async () => {
+  //     const data = await getDaycares();
+  //     setData(data);
+  //   }
+
+  //   fetchDaycares();
+  // }, []);
 
   return (
     <div style={{ height: '100vh', marginTop: '65px' }}>
