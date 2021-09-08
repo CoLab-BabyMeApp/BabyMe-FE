@@ -65,7 +65,7 @@ export default function Landing() {
           BabyMe
         </h1>
         <div style={{ textAlign: 'center' }}>
-          <p style={{ padding: '5px', width: '100%', backgroundColor: '#F0C933', fontFamily: 'Nunito, sans-serif', fontSize: '18px' }}>
+          <p style={{ padding: '5px 0 5px 0', width: '100%', backgroundColor: '#F0C933', fontFamily: 'Nunito, sans-serif', fontSize: '18px' }}>
             Now available in the Mobile, Portland, and Seattle areas
           </p>
           <Button
@@ -147,25 +147,25 @@ export default function Landing() {
               <Grid style={{ textAlign: 'left' }}>
                 <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
                   Enter your location
-              </Paper>
+                </Paper>
               </Grid>
               <br />
               <Grid style={{ textAlign: 'left' }}>
                 <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
                   Visit a list of daycares
-              </Paper>
+                </Paper>
               </Grid>
               <br />
               <Grid style={{ textAlign: 'left' }}>
                 <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
                   Customize your search
-              </Paper>
+                </Paper>
               </Grid>
               <br />
               <Grid style={{ textAlign: 'left' }}>
                 <Paper style={{ boxShadow: 'none', color: '#0F90D1', fontFamily: 'Average Sans, sans-serif', fontSize: '36px', lineHeight: '47px', backgroundColor: '#F9F9F9' }}>
                   Get results!
-              </Paper>
+                </Paper>
               </Grid>
               <br />
               <div style={{ backgroundColor: '#F0C933', height: '20px', width: '100%', marginLeft: '5px' }}></div>
@@ -179,11 +179,11 @@ export default function Landing() {
             />
             <p style={{ display: 'flex', position: 'absolute', paddingLeft: '5px', color: 'white', fontFamily: 'Average Sans, sans-serif', lineHeight: '24px', backgroundColor: 'rgba(0, 0, 0, .3)', width: '100%', padding: '10px', marginBottom: '0px', bottom: '0px' }}>
               Simplify your search for a
-            <br />
-            daycare that works best for
-            <br />
-            you & your child's needs.
-          </p>
+              <br />
+              daycare that works best for
+              <br />
+              you & your child's needs.
+            </p>
           </div>
         </section>
       </main>
