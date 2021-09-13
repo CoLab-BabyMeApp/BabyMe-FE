@@ -1,23 +1,3 @@
-// import request from 'superagent';
-
-// const URL = process.env.REACT_APP_API_URL;
-
-// export function getDaycares() {
-//   try {
-//     return request.get(`${URL}/api/v1/daycares`);
-//   } catch (e) {
-//     return { error: e.message }
-//   }
-// }
-
-// export function insertDaycare(daycare) {
-//   try {
-//     return request.post(`${URL}/api/v1/daycares`, daycare);
-//   } catch (e) {
-//     return { error: e.message }
-//   }
-// }
-
 export const postDaycare = async (daycare) => {
   const res = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/daycares`, {
     method: 'POST',
@@ -39,4 +19,3 @@ export const getAllDaycares = async () => {
 
   return json;
 }
-
