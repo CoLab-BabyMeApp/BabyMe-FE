@@ -8,6 +8,8 @@ import * as daycaresData from './data/geoJson.json';
 import { getDaycares } from '../src/services/daycaresApi';
 import Header from './Header';
 import './App.css';
+import { fetchDaycares } from './actions/daycareAction';
+import { useDispatch, useSelector } from 'react-redux';
 
 const token = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -41,14 +43,32 @@ export default function Map() {
     [handleViewportChange]
   );
 
-  // useEffect(() => {
-  //   const fetchDaycares = async () => {
-  //     const data = await getDaycares();
-  //     setData(data);
-  //   }
+  const daycares = useSelector(state => state.daycares.daycares);
+  const dispatch = useDispatch();
 
-  //   fetchDaycares();
-  // }, []);
+  useEffect(() => {
+    // const fetchDaycares = async () => {
+    //   const data = await getDaycares();
+    //   setData(data);
+    // }
+
+    // fetchDaycares();
+    dispatchEvent(fetchDaycares());
+  }, []);
+
+  const daycareElements = daycares.map(daycare => {
+    <Marker
+      key={daycare.properties.id}
+      latitude={daycare.geometry.coordinates[1]}
+      longitude={daycare.geometry.coordinates[0]}
+      onClick={(e) => {
+        e.preventDefault();
+        setSelectedDaycare(daycare);
+      }}
+    >
+      <IconMarker />
+    </Marker>
+  })
 
   return (
     <div style={{ height: '100vh', marginTop: '65px' }}>
@@ -76,7 +96,7 @@ export default function Map() {
           //auto
           style={{ bottom: '80px', right: '30px' }}
         />
-        {daycaresData.features.map(daycare => (
+        {/* {daycaresData.features.map(daycare => (
           <Marker
             key={daycare.properties.id}
             latitude={daycare.geometry.coordinates[1]}
@@ -88,7 +108,8 @@ export default function Map() {
           >
             <IconMarker />
           </Marker>
-        ))}
+        ))} */}
+        {daycareElements}
         {selectedDaycare ? (
           <Popup
             latitude={selectedDaycare.geometry.coordinates[1]}
