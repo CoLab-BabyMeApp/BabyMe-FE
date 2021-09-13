@@ -72,7 +72,7 @@ export default function Landing() {
             variant="contained"
             color="secondary"
             onClick={handleOpen}
-            style={{ marginTop: '20px' }}
+            style={{ marginTop: '10px' }}
           >
             Let's get started!
           </Button>
