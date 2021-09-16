@@ -5,11 +5,12 @@ import MapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
 import IconMarker from './IconMarker';
 import * as daycaresData from './data/geoJson.json';
-import { getDaycares } from '../src/services/daycaresApi';
+import { getAllDaycares } from '../src/services/daycaresApi';
 import Header from './Header';
 import './App.css';
 import { fetchDaycares } from './actions/daycareAction';
 import { useDispatch, useSelector } from 'react-redux';
+import { selectDaycares } from './selectors/daycareSelector';
 
 const token = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -43,7 +44,8 @@ export default function Map() {
     [handleViewportChange]
   );
 
-  const daycares = useSelector(state => state.daycares.daycares);
+  const daycares = useSelector(selectDaycares);
+  console.log('selectorDaycares', daycares);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -51,9 +53,11 @@ export default function Map() {
     //   const data = await getDaycares();
     //   setData(data);
     // }
-
     // fetchDaycares();
-    dispatchEvent(fetchDaycares());
+
+    dispatch(fetchDaycares());
+    // const daycares = getAllDaycares();
+    // console.log('daycares', daycares);
   }, []);
 
   const daycareElements = daycares.map(daycare => {

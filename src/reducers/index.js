@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 import daycareReducer from './daycareReducer';
 
 export default combineReducers({
