@@ -1,4 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import MapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
@@ -8,24 +9,36 @@ import * as daycaresData from '../data/geoJson.json';
 import Header from '../Header';
 import '../app/App.css';
 
+const useStyles = makeStyles((theme) => ({
+  mainContainer: {
+    height: '100vh',
+    marginTop: '65px',
+  }
+}))
+
 const token = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 export default function Map() {
+  const classes = useStyles();
 
   const [viewport, setViewport] = useState({
     latitude: 37.7577,
     longitude: -122.4376,
     zoom: 10
   });
+
   const geolocateControlStyle = {
     right: 10,
     top: 10
   };
+
   const mapRef = useRef();
+
   const handleViewportChange = useCallback(
     (newViewport) => setViewport(newViewport),
     []
   );
+
   const [selectedDaycare, setSelectedDaycare] = useState(null);
 
   const handleGeocoderViewportChange = useCallback(
@@ -41,7 +54,7 @@ export default function Map() {
   );
 
   return (
-    <div style={{ height: '100vh', marginTop: '65px' }}>
+    <div className={classes.mainContainer}>
       <Header />
       <MapGL
         ref={mapRef}
