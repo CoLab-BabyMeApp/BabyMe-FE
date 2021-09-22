@@ -4,8 +4,8 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import Landing from './Landing';
-import Map from './Map';
+import Landing from '../pages/Landing';
+import Map from '../pages/Map';
 
 export default function App() {
   return (

@@ -3,10 +3,10 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import MapGL, { Marker, Popup, GeolocateControl } from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
-import IconMarker from './IconMarker';
-import * as daycaresData from './data/geoJson.json';
-import Header from './Header';
-import './App.css';
+import IconMarker from '../IconMarker';
+import * as daycaresData from '../data/geoJson.json';
+import Header from '../Header';
+import '../app/App.css';
 
 const token = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 

@@ -46,7 +46,7 @@ h3 {
 }
 
 .marker {
-  background-image: url('./assets/marker.svg');
+  background-image: url('../assets/marker.svg');
   background-size: cover;
   width: 24px;
   height: 24px;

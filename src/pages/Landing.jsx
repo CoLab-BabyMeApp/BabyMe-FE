@@ -3,15 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import girlWithBlocks from './assets/girlWithBlocks.png';
-import clipartWoman from './assets/clipartWoman.png';
+import girlWithBlocks from '../assets/girlWithBlocks.png';
+import clipartWoman from '../assets/clipartWoman.png';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { BiCurrentLocation } from 'react-icons/bi';
 import { FaSearchLocation } from 'react-icons/fa';
-import './App.css';
-
+import '../app/App.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,10 +19,30 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
   },
-  paper: {
+  title: {
+    color: '#E0436B',
+    fontFamily: 'Righteous, cursive',
+    fontSize: '36px',
+    fontWeight: '400',
+    lineHeight: '45px',
+    letterHeight: '45px',
+    marginLeft: '20px',
+  },
+  subTitle: {
+    padding: '5px 0 5px 0',
+    width: '100%',
+    backgroundColor: '#F0C933',
+    fontFamily: 'Nunito, sans-serif',
+    fontSize: '18px',
+  },
+  messageBox: {
     boxShadow: 'none',
     textAlign: 'center',
-    color: theme.palette.text.secondary,
+    textAlign: 'center',
+    fontFamily: 'Average Sans, sans-serif',
+    backgroundColor: 'white',
+    padding: '15px',
+    borderRadius: '5px',
   },
   modal: {
     display: 'flex',
@@ -61,11 +80,11 @@ export default function Landing() {
   return (
     <>
       <div>
-        <h1 style={{ color: '#E0436B', fontFamily: 'Righteous, cursive', fontSize: '36px', fontWeight: '400', lineHeight: '45px', letterHeight: '45px', marginLeft: '20px' }}>
+        <h1 className={classes.title}>
           BabyMe
         </h1>
         <div style={{ textAlign: 'center' }}>
-          <p style={{ padding: '5px 0 5px 0', width: '100%', backgroundColor: '#F0C933', fontFamily: 'Nunito, sans-serif', fontSize: '18px' }}>
+          <p className={classes.subTitle}>
             Now available in the Mobile, Portland, and Seattle areas
           </p>
           <Button
@@ -89,7 +108,7 @@ export default function Landing() {
             }}
           >
             <Fade in={open}>
-              <div className={classes.paper} style={{ textAlign: 'center', fontFamily: 'Average Sans, sans-serif' }}>
+              <div className={classes.messageBox}>
                 <h2 id="transition-modal-title">
                   Start A Search
                 </h2>
