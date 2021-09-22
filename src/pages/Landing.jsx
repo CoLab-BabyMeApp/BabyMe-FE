@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import girlWithBlocks from '../assets/girlWithBlocks.png';
 import clipartWoman from '../assets/clipartWoman.png';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -29,11 +28,15 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '20px',
   },
   subTitle: {
-    padding: '5px 0 5px 0',
     width: '100%',
+    padding: '10px',
     backgroundColor: '#F0C933',
     fontFamily: 'Nunito, sans-serif',
-    fontSize: '18px',
+    fontSize: '1.2rem',
+    [theme.breakpoints.down('md')]: {
+      margin: '25px 0 25px 0',
+      padding: '10px 0 10px 0',
+    }
   },
   messageBox: {
     boxShadow: 'none',
@@ -44,6 +47,40 @@ const useStyles = makeStyles((theme) => ({
     padding: '15px',
     borderRadius: '5px',
   },
+  mainContainer: {
+    textAlign: 'center',
+    marginTop: '30px',
+    fontFamily: 'Righteous, cursive',
+    fontSize: '24px',
+    lineHeight: '30px',
+    color: '#E0436B',
+  },
+  infoContainer: {
+    display: 'flex',
+    backgroundColor: '#F9F9F9',
+    padding: '20px',
+    fontFamily: 'Average Sans, sans-serif',
+    maxWidth: '500px',
+    margin: 'auto',
+  },
+  infoText: {
+    boxShadow: 'none',
+    backgroundColor: '#F9F9F9',
+    fontSize: '1.25rem',
+  },
+  infoTextLarge: {
+    boxShadow: 'none',
+    color: '#0F90D1',
+    fontSize: '2rem',
+    fontFamily: 'Average Sans, sans-serif',
+    backgroundColor: '#F9F9F9',
+  },
+  yellowLine: {
+    backgroundColor: '#F0C933',
+    height: '20px',
+    width: '100%',
+    marginLeft: '5px',
+  },
   modal: {
     display: 'flex',
     alignItems: 'center',
@@ -53,6 +90,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+  },
+  footerContainer: {
+    color: 'white',
+    fontSize: '1.2rem',
+    fontFamily: 'Average Sans, sans-serif',
+    backgroundColor: 'rgba(0, 0, 0, .3)',
+    width: '100%',
+    padding: '10px',
   },
 }));
 
@@ -151,57 +196,52 @@ export default function Landing() {
           </Modal>
         </div>
       </div >
-      <main>
-        <p style={{ textAlign: 'center', marginTop: '30px', fontFamily: 'Righteous, cursive', fontSize: '24px', lineHeight: '30px', color: '#E0436B' }}>
+      <main className={classes.mainContainer}>
+        <h3>
           How does BabyMe work?
-        </p>
+        </h3>
         <section style={{ backgroundColor: '#F9F9F9' }}>
-          <div style={{ display: 'flex', backgroundColor: '#F9F9F9', padding: '20px', fontFamily: 'Average Sans, sans-serif', maxWidth: '500px', margin: 'auto' }}>
+          <div className={classes.infoContainer}>
             <img
               src={clipartWoman}
               alt="pregnant woman"
               style={{ height: '240px', margin: 'auto' }}
             />
-            <div style={{ margin: 'auto' }}>
-              <Grid style={{ textAlign: 'left' }}>
-                <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
+            <div style={{ margin: 'auto', textAlign: 'left' }}>
+              <Grid>
+                <Paper className={classes.infoText}>
                   Enter your location
                 </Paper>
               </Grid>
               <br />
-              <Grid style={{ textAlign: 'left' }}>
-                <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
+              <Grid>
+                <Paper className={classes.infoText}>
                   Visit a list of daycares
                 </Paper>
               </Grid>
               <br />
-              <Grid style={{ textAlign: 'left' }}>
-                <Paper style={{ boxShadow: 'none', backgroundColor: '#F9F9F9' }}>
+              <Grid>
+                <Paper className={classes.infoText}>
                   Customize your search
                 </Paper>
               </Grid>
               <br />
-              <Grid style={{ textAlign: 'left' }}>
-                <Paper style={{ boxShadow: 'none', color: '#0F90D1', fontFamily: 'Average Sans, sans-serif', fontSize: '36px', lineHeight: '47px', backgroundColor: '#F9F9F9' }}>
+              <Grid>
+                <Paper className={classes.infoTextLarge}>
                   Get results!
                 </Paper>
               </Grid>
               <br />
-              <div style={{ backgroundColor: '#F0C933', height: '20px', width: '100%', marginLeft: '5px' }}></div>
+              <div className={classes.yellowLine}></div>
             </div>
           </div>
-          <div style={{ position: 'relative' }}>
-            <img
-              src={girlWithBlocks}
-              alt="Kids playing at table"
-              style={{ width: '100%', bottom: '0' }}
-            />
-            <p style={{ display: 'flex', position: 'absolute', paddingLeft: '5px', color: 'white', fontFamily: 'Average Sans, sans-serif', lineHeight: '24px', backgroundColor: 'rgba(0, 0, 0, .3)', width: '100%', padding: '10px', marginBottom: '0px', bottom: '0px' }}>
+        </section>
+        <section>
+          <div style={{ display: 'flex' }}>
+            <p className={classes.footerContainer}>
               Simplify your search for a
-              <br />
               daycare that works best for
-              <br />
-              you & your child's needs.
+              you and your child's needs.
             </p>
           </div>
         </section>
