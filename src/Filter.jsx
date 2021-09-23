@@ -36,9 +36,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Filter() {
   const classes = useStyles();
+
   const [value, setValue] = useState('');
+
   const [filteredDaycares, setFilteredDaycares] = useState([]);
+
   const [anchorEl, setAnchorEl] = useState(null);
+
   const [hours, setHours] = useState('');
 
   const handleChangeDropdown = (e) => {
@@ -178,7 +182,7 @@ export default function Filter() {
             onClick={handleClick}
           >
             Filter Daycares
-        </Button>
+          </Button>
         </div>
         <Popover
           id={id}
